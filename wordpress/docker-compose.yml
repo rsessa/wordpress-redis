@@ -29,13 +29,13 @@ services:
       - internal
       - web
     expose:
-          - "80"
-          - "443"
+      - "80"
+      - "443"
     labels:
-         # Caddy
+      # Caddy
       caddy: ${WP_HOST}
       caddy.reverse_proxy: "{{upstreams http}}"
-         # Traefik
+      # Traefik
       traefik.enable: 'true'
       traefik.frontend.rule: "Host:${WP_HOST}"
       traefik.port: '80'
@@ -50,5 +50,6 @@ services:
       - internal
       
 networks:
-  internal:
-  web:
+    web:
+        external: true
+    internal: {}
