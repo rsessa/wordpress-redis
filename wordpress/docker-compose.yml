@@ -33,7 +33,7 @@ services:
           - "443"
     labels:
          # Caddy
-     caddy: ${INFINITEWP_HOST}
+     caddy: ${WP_HOST}
      caddy.reverse_proxy: "{{upstreams http}}"
          # Traefik
      traefik.enable: 'true'
@@ -48,3 +48,7 @@ services:
       - ./redis:/data
     networks:
       - internal
+      
+networks:
+  internal:
+  web:
