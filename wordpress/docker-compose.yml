@@ -33,12 +33,12 @@ services:
           - "443"
     labels:
          # Caddy
-    caddy: ${WP_HOST}
-    caddy.reverse_proxy: "{{upstreams http}}"
+      caddy: ${WP_HOST}
+      caddy.reverse_proxy: "{{upstreams http}}"
          # Traefik
-    traefik.enable: 'true'
-    traefik.frontend.rule: "Host:${WP_HOST}"
-    traefik.port: '80'
+      traefik.enable: 'true'
+      traefik.frontend.rule: "Host:${WP_HOST}"
+      traefik.port: '80'
 
   wpredis:
     container_name: wpredis
