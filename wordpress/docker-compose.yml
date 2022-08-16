@@ -37,7 +37,7 @@ services:
      caddy.reverse_proxy: "{{upstreams http}}"
          # Traefik
      traefik.enable: 'true'
-     traefik.frontend.rule: "Host:${INFINITEWP_HOST}"
+     traefik.frontend.rule: "Host:${WP_HOST}"
      traefik.port: '80'
 
   wpredis:
